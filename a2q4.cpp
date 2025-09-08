@@ -25,6 +25,7 @@ class Polynomial{
         for(int i =0; i<p3.n; i++){
             cout<<p3.coefficient[i]<<"x^"<<p3.exponent[i]<<" + ";
         }
+        cout<<endl;  
     }
     Polynomial operator +(Polynomial & p){
         Polynomial p3; 

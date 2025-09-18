@@ -6,14 +6,14 @@ class First{
     int bookNo;
     public:
     void getData(){
+        cin.ignore();
         cout<<"Enter name of book: "<<endl; 
         string n;
-        cin>>n; 
+        getline(cin,n);
         bookName = n; 
         cout<<"Enter book no: "<<endl; 
         int r; 
         cin>>r;
-        cout<<"cin executed"<<endl; 
         bookNo = r; 
     }
     void putData(){
@@ -25,13 +25,15 @@ class Second{
     string authorName, publisher; 
     public:
     void getData(){
+        cin.ignore();
         cout<<"Enter name of author: "<<endl; 
         string n;
-        cin>>n; 
+        getline(cin,n); 
         authorName = n; 
+        cin.ignore();
         cout<<"Enter publisher: "<<endl; 
         string r; 
-        cin>>r;
+        getline(cin,r);
         publisher = r; 
     }
     void showData(){
@@ -65,11 +67,12 @@ int main(){
     cout<<"enter no of books"<<endl; 
     int n; cin>>n;
     for(int i =0; i<n; i++){
+        cout<<i+1<<" th book "<<endl; 
         books[i].getData();
     }
     cout<<"Library Information "<<endl; 
     for(int i =0; i<n; i++){
-        books[i].showData();
+        books[i].display();
     }
     return 0;
 }
